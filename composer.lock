@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c60902d5063cf6d97f3b34d5d7088ea0",
+    "content-hash": "2a6fce2b659da80879f0cf55aaca0375",
     "packages": [
         {
             "name": "igniteit/arduino-actuators-oo",
@@ -72,6 +72,38 @@
                 "issues": "https://github.com/edunola13/arduino-basic-oo/issues"
             },
             "time": "2018-05-02T02:09:26+00:00"
+        },
+        {
+            "name": "igniteit/arduino-general-use",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/edunola13/arduino-general-use.git",
+                "reference": "a5b1c0255c072def17eae5cecddad412678772d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/edunola13/arduino-general-use/zipball/a5b1c0255c072def17eae5cecddad412678772d6",
+                "reference": "a5b1c0255c072def17eae5cecddad412678772d6",
+                "shasum": ""
+            },
+            "type": "arduino-lib",
+            "authors": [
+                {
+                    "name": "Eduardo Sebastian Nola",
+                    "email": "edunola13@hotmail.com",
+                    "homepage": "http://www.edunola.com.ar/",
+                    "role": "Designer,Developer"
+                }
+            ],
+            "keywords": [
+                "Arduino"
+            ],
+            "support": {
+                "source": "https://github.com/edunola13/arduino-general-use/tree/master",
+                "issues": "https://github.com/edunola13/arduino-general-use/issues"
+            },
+            "time": "2018-05-17T23:14:31+00:00"
         },
         {
             "name": "igniteit/arduino-http",
@@ -148,6 +180,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "igniteit/arduino-general-use": 20,
         "igniteit/arduino-sensors-oo": 20,
         "igniteit/arduino-actuators-oo": 20,
         "igniteit/arduino-http": 20

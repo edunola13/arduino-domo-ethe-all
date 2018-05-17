@@ -1,13 +1,20 @@
 #include <SPI.h>
 #include <EEPROM.h>
-#include <MemoryFree.h>
+//#include <MemoryFree.h>
 //Serial.println(freeMemory());
 
 // Uncomment to enable printing out nice debug messages.
-//#define DOMO_DEBUG
+#define DOMO_DEBUG
 //#define DOMO_SPEED 9600
-//#define USE_WDT
-#include "DomoBasic_V1_0.h"
+//WATCHDOG NO FUNCIONA CON ETHERNET SHIELD
+//#define USE_WDT 
+//#define WDT_TIME WDTO_8S
+#include "vendor/igniteit/arduino-general-use/common_initial.h"
+#include "messages.h"
+
+#define resetPin 2
+#define resetPoint 0
+#include "vendor/igniteit/arduino-general-use/reset_manage.h"
 
 #include "vendor/igniteit/arduino-sensors-oo/AnalogSensor.h"
 #include "vendor/igniteit/arduino-sensors-oo/AnalogSensor.cpp"
@@ -113,17 +120,16 @@ unsigned long lasttimeControls= 0;
 bool notification= false;
 
 #define USE_ACTUAL_ITEM
-#include "ResetManage_V1_0.h"
-#include "Json_V1_0.h"
-#include "EthernetManage_V1_0.h"
-#include "HttpController_V1_0.h"
+#include "vendor/igniteit/arduino-general-use/api/json_interface_api.h"
+#include "vendor/igniteit/arduino-general-use/ethernet/ethernet_manage.h"
+#include "vendor/igniteit/arduino-general-use/api/general_controllers_api.h"
 
 //CODE PROGRAM
 #define codePro "ethe-all-1.0"
 
 void setup() {
   //BASIC
-  initialDomo();  
+  initialGeneric();  
   //RESET
   initialReset();
   //CONFIGURATION
